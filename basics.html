@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Basics | GitHub Tutorial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>GitHub Basics</h1>
+            <p class="subtitle">Understanding the fundamentals</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <nav class="navigation-card">
+            <ul class="nav-links">
+                <li><a href="index.html" class="btn">Home</a></li>
+                <li><a href="workflow.html" class="btn">Collaborative Workflow</a></li>
+                <li><a href="advanced.html" class="btn">Advanced Features</a></li>
+                <li><a href="notebook.html" class="btn highlight">Hands-on Notebook</a></li>
+            </ul>
+        </nav>
+        
+        <section>
+            <h2>What is Git vs. GitHub?</h2>
+            <p><strong>Git</strong> is a distributed version control system that tracks changes in source code during software development. It was created by Linus Torvalds in 2005 for development of the Linux kernel.</p>
+            
+            <p><strong>GitHub</strong> is a cloud-based hosting service that lets you manage Git repositories. GitHub adds many features on top of Git, including:</p>
+            <ul>
+                <li>A web-based interface</li>
+                <li>Access control</li>
+                <li>Bug tracking</li>
+                <li>Feature requests</li>
+                <li>Task management</li>
+                <li>Wikis for project documentation</li>
+                <li>Pull requests for code review</li>
+            </ul>
+            
+            <div class="note">
+                <p><strong>Note:</strong> While Git is a command-line tool, GitHub provides a web-based graphical interface for Git operations and extends Git's functionality.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Creating Repositories</h2>
+            <p>A repository (or "repo") is like a project folder that contains all of your project's files and stores each file's revision history.</p>
+            
+            <h3>Creating a new repository on GitHub</h3>
+            <ol>
+                <li>Log in to your GitHub account</li>
+                <li>Click the "+" icon in the top-right corner and select "New repository"</li>
+                <li>Name your repository</li>
+                <li>Add an optional description</li>
+                <li>Choose public or private visibility</li>
+                <li>Select "Add a README file" if desired</li>
+                <li>Choose whether to add .gitignore and a license</li>
+                <li>Click "Create repository"</li>
+            </ol>
+            
+            <h3>Cloning an existing repository</h3>
+            <p>Cloning creates a local copy of a repository on your computer.</p>
+            <pre><code>git clone https://github.com/username/repository.git</code></pre>
+            
+            <div class="tip">
+                <p><strong>Tip:</strong> When creating a new repository, initializing it with a README file is recommended as it provides immediate documentation and allows you to clone the repository right away.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Making Commits</h2>
+            <p>A commit is a snapshot of your repository at a specific point in time. It's like saving a new version of your project.</p>
+            
+            <h3>Basic commit workflow</h3>
+            <ol>
+                <li>Make changes to your files</li>
+                <li>Stage the changes using <code>git add</code></li>
+                <li>Commit the staged changes with a message using <code>git commit</code></li>
+                <li>Push the commits to GitHub using <code>git push</code></li>
+            </ol>
+            
+            <h3>Git commands for committing</h3>
+            <pre><code># Check status of your files
+git status
+
+# Stage specific file
+git add filename.txt
+
+# Stage all changes
+git add .
+
+# Commit with a message
+git commit -m "Your detailed commit message here"
+
+# Push to GitHub
+git push origin main</code></pre>
+            
+            <div class="note">
+                <p><strong>Note:</strong> Write clear and descriptive commit messages. A good practice is to use the imperative mood (e.g., "Add feature" instead of "Added feature").</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Working with Branches</h2>
+            <p>Branches allow you to develop features, fix bugs, or experiment with new ideas in a contained area of your repository.</p>
+            
+            <h3>Basic branching concepts</h3>
+            <ul>
+                <li><strong>Main branch</strong>: The default branch (formerly called "master")</li>
+                <li><strong>Feature branches</strong>: Created to develop specific features isolated from the main branch</li>
+                <li><strong>Merging</strong>: Combining changes from one branch into another</li>
+            </ul>
+            
+            <h3>Common branch commands</h3>
+            <pre><code># Create and checkout a new branch
+git checkout -b feature-branch
+
+# Switch to an existing branch
+git checkout branch-name
+
+# List all branches
+git branch
+
+# Push a branch to GitHub
+git push origin feature-branch
+
+# Merge a branch into your current branch
+git merge branch-name</code></pre>
+            
+            <div class="tip">
+                <p><strong>Tip:</strong> Name your branches descriptively, using slashes to categorize them (e.g., feature/user-authentication, bugfix/login-issue).</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>GitHub Interface Overview</h2>
+            <h3>Key Areas of the GitHub Interface</h3>
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Code tab</td>
+                    <td>View files and folders in your repository</td>
+                </tr>
+                <tr>
+                    <td>Issues tab</td>
+                    <td>Track bugs, enhancements, and other tasks</td>
+                </tr>
+                <tr>
+                    <td>Pull Requests tab</td>
+                    <td>Review and discuss code changes before merging</td>
+                </tr>
+                <tr>
+                    <td>Actions tab</td>
+                    <td>Set up CI/CD workflows and automation</td>
+                </tr>
+                <tr>
+                    <td>Projects tab</td>
+                    <td>Project management boards</td>
+                </tr>
+                <tr>
+                    <td>Wiki tab</td>
+                    <td>Documentation for your project</td>
+                </tr>
+                <tr>
+                    <td>Insights tab</td>
+                    <td>Analytics and statistics for your repository</td>
+                </tr>
+                <tr>
+                    <td>Settings tab</td>
+                    <td>Repository configuration options</td>
+                </tr>
+            </table>
+            
+            <div class="note">
+                <p><strong>Note:</strong> Some tabs may not be visible if certain features aren't enabled for your repository.</p>
+            </div>
+        </section>
+        
+        <nav class="navigation-card">
+            <h3>Continue Learning</h3>
+            <ul class="nav-links">
+                <li><a href="workflow.html" class="btn">Next: Collaborative Workflow →</a></li>
+                <li><a href="notebook.html" class="btn highlight">Try the Hands-on Notebook</a></li>
+            </ul>
+        </nav>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>GitHub Tutorial Series - Created for educational purposes</p>
+        </div>
+    </footer>
+</body>
+</html> 

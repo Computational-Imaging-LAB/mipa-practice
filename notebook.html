@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hands-on Notebook | GitHub Tutorial</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles specific to the notebook */
+        .exercise {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .exercise h3 {
+            margin-top: 0;
+        }
+        
+        .task-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .task-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .task-list li:before {
+            content: "⬜";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+        
+        .task-list li.completed:before {
+            content: "✅";
+        }
+        
+        .command-reference {
+            background-color: #f0f7fb;
+            border-left: 4px solid #87ade0;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .command-reference h4 {
+            margin-top: 0;
+            color: #0366d6;
+        }
+        
+        .practice-repo {
+            background-color: #f0fff4;
+            border: 1px solid var(--primary-color);
+            border-radius: 6px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Hands-on GitHub Notebook</h1>
+            <p class="subtitle">Practical exercises to master GitHub</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <nav class="navigation-card">
+            <ul class="nav-links">
+                <li><a href="index.html" class="btn">Home</a></li>
+                <li><a href="basics.html" class="btn">GitHub Basics</a></li>
+                <li><a href="workflow.html" class="btn">Collaborative Workflow</a></li>
+                <li><a href="advanced.html" class="btn">Advanced Features</a></li>
+            </ul>
+        </nav>
+        
+        <section>
+            <h2>How to Use This Notebook</h2>
+            <p>This interactive notebook contains practical exercises to help you apply what you've learned about GitHub. Each exercise builds on skills from previous ones, taking you from basic to advanced GitHub operations.</p>
+            
+            <div class="practice-repo">
+                <h3>Create a Practice Repository</h3>
+                <p>For these exercises, you'll need a practice repository. Create one on GitHub with the following steps:</p>
+                <ol>
+                    <li>Go to GitHub and log in to your account</li>
+                    <li>Click the "+" icon in the top-right corner and select "New repository"</li>
+                    <li>Name it "mipa-practice"</li>
+                    <li>Add a description: "My repository for GitHub practice exercises"</li>
+                    <li>Choose "Public" visibility</li>
+                    <li>Check "Add a README file"</li>
+                    <li>Click "Create repository"</li>
+                </ol>
+                <a href="https://github.com/new" target="_blank" class="btn">Create Repository Now</a>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Basic Exercises</h2>
+            
+            <div class="exercise">
+                <h3>Exercise 1: Clone Your Repository</h3>
+                <p>First, let's get a local copy of your repository.</p>
+                
+                <ol class="task-list">
+                    <li>Open your terminal or command prompt</li>
+                    <li>Navigate to where you want to store your project</li>
+                    <li>Clone your repository with: <code>git clone https://github.com/abdullahbas/mipa-practice.git</code></li>
+                    <li>Navigate into the cloned repository: <code>cd mipa-practice</code></li>
+                </ol>
+                
+                <div class="command-reference">
+                    <h4>Commands Used</h4>
+                    <pre><code>git clone https://github.com/abdullahbas/mipa-practice.git
+cd mipa-practice</code></pre>
+                </div>
+            </div>
+            
+            <div class="exercise">
+                <h3>Exercise 2: Make and Commit Changes</h3>
+                <p>Now let's make some changes and commit them to your repository.</p>
+                
+                <ol class="task-list">
+                    <li>Create a new file called <code>about.txt</code> in your repository</li>
+                    <li>Add a few lines about yourself or the project</li>
+                    <li>Save the file</li>
+                    <li>Check the status of your repository: <code>git status</code></li>
+                    <li>Stage the file: <code>git add about.txt</code></li>
+                    <li>Commit your changes: <code>git commit -m "Add about file"</code></li>
+                    <li>Push your changes to GitHub: <code>git push</code></li>
+                </ol>
+                
+                <div class="command-reference">
+                    <h4>Commands Used</h4>
+                    <pre><code>git status
+git add about.txt
+git commit -m "Add about file"
+git push</code></pre>
+                </div>
+            </div>
+            
+            <div class="exercise">
+                <h3>Exercise 3: Create and Switch Branches</h3>
+                <p>Let's practice working with branches.</p>
+                
+                <ol class="task-list">
+                    <li>Create a new branch called "feature-readme-update": <code>git checkout -b feature-readme-update</code></li>
+                    <li>Open README.md and add more information about your project</li>
+                    <li>Commit your changes to this branch</li>
+                    <li>Push the branch to GitHub: <code>git push -u origin feature-readme-update</code></li>
+                    <li>Switch back to the main branch: <code>git checkout main</code></li>
+                </ol>
+                
+                <div class="command-reference">
+                    <h4>Commands Used</h4>
+                    <pre><code>git checkout -b feature-readme-update
+# Edit README.md
+git add README.md
+git commit -m "Update README with more information"
+git push -u origin feature-readme-update
+git checkout main</code></pre>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Intermediate Exercises</h2>
+            
+            <div class="exercise">
+                <h3>Exercise 4: Create a Pull Request</h3>
+                <p>Now let's create a pull request to merge your feature branch changes into the main branch.</p>
+                
+                <ol class="task-list">
+                    <li>Go to your repository on GitHub</li>
+                    <li>Click the "Pull requests" tab</li>
+                    <li>Click the green "New pull request" button</li>
+                    <li>Set the base branch to "main" and the compare branch to "feature-readme-update"</li>
+                    <li>Click "Create pull request"</li>
+                    <li>Add a title and description for your pull request</li>
+                    <li>Click "Create pull request" again to submit it</li>
+                </ol>
+            </div>
+            
+            <div class="exercise">
+                <h3>Exercise 5: Review and Merge a Pull Request</h3>
+                <p>Now let's review and merge the pull request you created.</p>
+                
+                <ol class="task-list">
+                    <li>On the pull request page, click the "Files changed" tab to see your changes</li>
+                    <li>Add a comment to your own code (for practice)</li>
+                    <li>Go back to the "Conversation" tab</li>
+                    <li>Click the green "Merge pull request" button</li>
+                    <li>Confirm the merge by clicking "Confirm merge"</li>
+                    <li>Delete the branch if you don't need it anymore</li>
+                </ol>
+            </div>
+            
+            <div class="exercise">
+                <h3>Exercise 6: Resolving Merge Conflicts</h3>
+                <p>Let's practice resolving merge conflicts, which occur when changes overlap.</p>
+                
+                <ol class="task-list">
+                    <li>Pull the latest changes to your local repository: <code>git pull</code></li>
+                    <li>Create another branch: <code>git checkout -b conflict-branch</code></li>
+                    <li>Edit the first line of your README.md file and commit the changes</li>
+                    <li>Switch back to main: <code>git checkout main</code></li>
+                    <li>Edit the same line of README.md differently and commit</li>
+                    <li>Try to merge your branch: <code>git merge conflict-branch</code></li>
+                    <li>Resolve the conflict by editing the file (removing conflict markers)</li>
+                    <li>Stage the resolved file: <code>git add README.md</code></li>
+                    <li>Complete the merge: <code>git commit</code></li>
+                </ol>
+                
+                <div class="command-reference">
+                    <h4>Commands Used</h4>
+                    <pre><code>git pull
+git checkout -b conflict-branch
+# Edit README.md
+git add README.md
+git commit -m "Edit README in conflict-branch"
+git checkout main
+# Edit same line in README.md
+git add README.md
+git commit -m "Edit README in main branch"
+git merge conflict-branch
+# Resolve conflicts in editor
+git add README.md
+git commit</code></pre>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Advanced Exercises</h2>
+            
+            <div class="exercise">
+                <h3>Exercise 7: Setting Up GitHub Actions</h3>
+                <p>Let's create a simple GitHub Actions workflow.</p>
+                
+                <ol class="task-list">
+                    <li>In your local repository, create a directory: <code>mkdir -p .github/workflows</code></li>
+                    <li>Create a file named <code>.github/workflows/hello.yml</code></li>
+                    <li>Add the following content to the file:</li>
+                </ol>
+                
+                <pre><code>name: Hello World Workflow
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run a simple greeting
+      run: echo Hello, world!</code></pre>
+                
+                <ol class="task-list" start="4">
+                    <li>Commit and push this file to your repository</li>
+                    <li>Go to the "Actions" tab on GitHub to see your workflow run</li>
+                </ol>
+            </div>
+            
+            <div class="exercise">
+                <h3>Exercise 8: Creating GitHub Pages</h3>
+                <p>Let's set up GitHub Pages to host a simple website from your repository.</p>
+                
+                <ol class="task-list">
+                    <li>Create a file named <code>index.html</code> in your repository with some basic HTML content</li>
+                    <li>Commit and push the file to GitHub</li>
+                    <li>Go to the repository settings on GitHub</li>
+                    <li>Navigate to the "Pages" section in the left sidebar</li>
+                    <li>Under "Source", select "main" branch and "/ (root)" folder</li>
+                    <li>Click "Save"</li>
+                    <li>Wait a few minutes, then visit the published site at the URL provided</li>
+                </ol>
+                
+                <div class="tip">
+                    <p><strong>Tip:</strong> You can create a more interesting site with a template or use a static site generator like Jekyll, which GitHub Pages supports natively.</p>
+                </div>
+            </div>
+            
+            <div class="exercise">
+                <h3>Exercise 9: Working with Issues and Projects</h3>
+                <p>Let's practice using GitHub's issue tracking and project management features.</p>
+                
+                <ol class="task-list">
+                    <li>Go to the "Issues" tab on your repository</li>
+                    <li>Create a new issue titled "Add documentation"</li>
+                    <li>Add a description and labels to your issue</li>
+                    <li>Go to the "Projects" tab and create a new project</li>
+                    <li>Choose the board template</li>
+                    <li>Add your issue to the project board</li>
+                    <li>Create a new branch from this issue</li>
+                    <li>Make changes to address the issue</li>
+                    <li>Create a pull request that references and closes the issue</li>
+                </ol>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Challenge Exercises</h2>
+            
+            <div class="exercise">
+                <h3>Challenge 1: Git Rebase</h3>
+                <p>Practice using git rebase to maintain a clean commit history.</p>
+                
+                <ol class="task-list">
+                    <li>Create a new branch for a feature</li>
+                    <li>Make several small commits</li>
+                    <li>Use interactive rebase to combine (squash) the commits: <code>git rebase -i HEAD~3</code> (if you have 3 commits)</li>
+                    <li>Push your changes (you'll need to force push): <code>git push -f</code></li>
+                </ol>
+                
+                <div class="warning">
+                    <p><strong>Warning:</strong> Be careful with force pushing to shared branches as it rewrites history. Only force push to your personal branches or when you're absolutely sure it's safe.</p>
+                </div>
+            </div>
+            
+            <div class="exercise">
+                <h3>Challenge 2: GitHub API</h3>
+                <p>Try using GitHub's API to interact with your repository programmatically.</p>
+                
+                <ol class="task-list">
+                    <li>Generate a personal access token on GitHub (Settings → Developer settings → Personal access tokens)</li>
+                    <li>Use curl or another tool to fetch information about your repository:</li>
+                </ol>
+                
+                <pre><code>curl -H "Authorization: token YOUR_TOKEN" \
+     https://api.github.com/repos/abdullahbas/mipa-practice</code></pre>
+                
+                <ol class="task-list" start="3">
+                    <li>Try creating an issue via the API:</li>
+                </ol>
+                
+                <pre><code>curl -H "Authorization: token YOUR_TOKEN" \
+     -X POST \
+     -d '{"title":"API Created Issue","body":"This issue was created via the GitHub API"}' \
+     https://api.github.com/repos/abdullahbas/mipa-practice/issues</code></pre>
+            </div>
+        </section>
+        
+        <div class="navigation-card">
+            <h3>Continue Learning</h3>
+            <p>Now that you've completed these exercises, you've gained practical experience with GitHub's core features. Consider exploring more advanced topics or contributing to open source projects to further develop your skills.</p>
+            <ul class="nav-links">
+                <li><a href="index.html" class="btn">Return to Home</a></li>
+                <li><a href="advanced.html" class="btn">Advanced Features</a></li>
+            </ul>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>GitHub Tutorial Series - Created for educational purposes</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to make task list items clickable (for tracking progress)
+        document.addEventListener('DOMContentLoaded', function() {
+            const taskItems = document.querySelectorAll('.task-list li');
+            
+            taskItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.classList.toggle('completed');
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

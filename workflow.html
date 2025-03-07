@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Workflow | GitHub Tutorial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Collaborative Workflow</h1>
+            <p class="subtitle">Working together effectively on GitHub</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <nav class="navigation-card">
+            <ul class="nav-links">
+                <li><a href="index.html" class="btn">Home</a></li>
+                <li><a href="basics.html" class="btn">GitHub Basics</a></li>
+                <li><a href="advanced.html" class="btn">Advanced Features</a></li>
+                <li><a href="notebook.html" class="btn highlight">Hands-on Notebook</a></li>
+            </ul>
+        </nav>
+        
+        <section>
+            <h2>Pull Requests</h2>
+            <p>Pull requests (PRs) are the heart of collaboration on GitHub. They let you tell others about changes you've pushed to a branch in a repository and request that someone review and pull in your contribution.</p>
+            
+            <h3>Creating a Pull Request</h3>
+            <ol>
+                <li>Push your branch to GitHub: <code>git push origin feature-branch</code></li>
+                <li>Navigate to your repository on GitHub</li>
+                <li>Click the "Pull requests" tab and then the "New pull request" button</li>
+                <li>Select your branch as the "compare" branch</li>
+                <li>Review your changes and click "Create pull request"</li>
+                <li>Add a title and description that clearly explain your changes</li>
+                <li>Click "Create pull request" to submit it</li>
+            </ol>
+            
+            <h3>Anatomy of a Good Pull Request</h3>
+            <ul>
+                <li><strong>Clear title</strong>: Summarize what the PR does</li>
+                <li><strong>Detailed description</strong>: Explain why these changes are needed</li>
+                <li><strong>Reference issues</strong>: Link to related issues with "#123"</li>
+                <li><strong>Screenshots/videos</strong>: Include for UI changes</li>
+                <li><strong>Test results</strong>: Show that your changes work as expected</li>
+            </ul>
+            
+            <div class="tip">
+                <p><strong>Tip:</strong> Use keywords like "Fixes #123" or "Closes #123" in your PR description to automatically close the referenced issue when the PR is merged.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Code Reviews</h2>
+            <p>Code reviews are a critical process where team members examine each other's code changes to improve quality and share knowledge.</p>
+            
+            <h3>Reviewing a Pull Request</h3>
+            <ol>
+                <li>Navigate to the pull request on GitHub</li>
+                <li>Click the "Files changed" tab to see the changes</li>
+                <li>Comment on specific lines by clicking the "+" that appears when hovering</li>
+                <li>Use suggestions to propose specific changes (click the suggestion icon)</li>
+                <li>Review the entire PR by clicking "Review changes"</li>
+                <li>Choose to comment, approve, or request changes</li>
+                <li>Submit your review</li>
+            </ol>
+            
+            <h3>Effective Code Review Practices</h3>
+            <ul>
+                <li>Be respectful and constructive</li>
+                <li>Focus on the code, not the person</li>
+                <li>Be specific about what needs changing</li>
+                <li>Explain why a change is needed, not just what</li>
+                <li>Look for both technical issues and design/architecture concerns</li>
+                <li>Suggest alternatives when possible</li>
+                <li>Remember to highlight good solutions too</li>
+            </ul>
+            
+            <div class="note">
+                <p><strong>Note:</strong> GitHub allows you to suggest exact code changes using the suggestion feature, which the author can directly apply with a single click.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Issues & Projects</h2>
+            <p>GitHub's issue tracking and project management features help teams organize their work and track progress.</p>
+            
+            <h3>Working with Issues</h3>
+            <p>Issues help you track bugs, features, and other tasks. Each issue can include:</p>
+            <ul>
+                <li>Title and description</li>
+                <li>Assignees (who's responsible)</li>
+                <li>Labels (bug, enhancement, etc.)</li>
+                <li>Milestones (group issues by release)</li>
+                <li>Comments for discussion</li>
+                <li>Task lists with checkboxes</li>
+            </ul>
+            
+            <h3>GitHub Projects</h3>
+            <p>Projects provide Kanban-style boards for tracking work:</p>
+            <ul>
+                <li><strong>Project boards</strong>: Organize issues and PRs into columns</li>
+                <li><strong>Automation</strong>: Automatically move cards based on status</li>
+                <li><strong>Views</strong>: Table, board, and roadmap views</li>
+                <li><strong>Custom fields</strong>: Add metadata to issues and PRs</li>
+            </ul>
+            
+            <div class="tip">
+                <p><strong>Tip:</strong> Use issue templates to standardize how team members report bugs or request features, making it easier to collect necessary information.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Collaborative Branching Models</h2>
+            <p>Teams need a structured approach to branches to maintain order in collaborative development.</p>
+            
+            <h3>GitHub Flow</h3>
+            <p>A lightweight, branch-based workflow:</p>
+            <ol>
+                <li>Create a branch from main</li>
+                <li>Add commits</li>
+                <li>Open a pull request</li>
+                <li>Discuss and review code</li>
+                <li>Deploy (optionally) for testing</li>
+                <li>Merge to main</li>
+            </ol>
+            
+            <h3>Git Flow</h3>
+            <p>A more complex model with specific branch types:</p>
+            <ul>
+                <li><strong>main</strong>: Always production-ready code</li>
+                <li><strong>develop</strong>: Latest development changes</li>
+                <li><strong>feature/</strong>: New features</li>
+                <li><strong>release/</strong>: Preparing for a release</li>
+                <li><strong>hotfix/</strong>: Urgent production fixes</li>
+            </ul>
+            
+            <h3>Trunk-Based Development</h3>
+            <p>A model focused on keeping the main branch clean:</p>
+            <ul>
+                <li>Developers work on short-lived feature branches</li>
+                <li>Frequent integration to main (at least daily)</li>
+                <li>Emphasis on automated testing</li>
+                <li>Feature flags for incomplete features</li>
+            </ul>
+            
+            <div class="note">
+                <p><strong>Note:</strong> Choose a branching model that fits your team's size, release cadence, and workflow preferences. Simpler is often better for smaller teams.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Handling Merge Conflicts</h2>
+            <p>Merge conflicts occur when two branches have made different changes to the same line of a file, or when one branch deletes a file that another branch has modified.</p>
+            
+            <h3>Resolving Merge Conflicts</h3>
+            <p>When a conflict occurs during a merge or pull request:</p>
+            <ol>
+                <li>Git will mark the conflicted areas in your files</li>
+                <li>Open the conflicted files and look for conflict markers (<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>)</li>
+                <li>Edit the files to resolve the conflicts</li>
+                <li>Remove the conflict markers</li>
+                <li>Add the resolved files: <code>git add &lt;filename&gt;</code></li>
+                <li>Complete the merge with <code>git commit</code></li>
+            </ol>
+            
+            <h3>Avoiding Merge Conflicts</h3>
+            <ul>
+                <li>Pull from the main branch frequently</li>
+                <li>Keep feature branches short-lived</li>
+                <li>Communicate with team members about overlapping work</li>
+                <li>Use smaller, focused commits</li>
+                <li>Structure your project to minimize file overlap</li>
+            </ul>
+            
+            <div class="tip">
+                <p><strong>Tip:</strong> GitHub has a web-based editor for resolving simple conflicts directly on the website. For more complex conflicts, use a visual merge tool like Visual Studio Code, GitKraken, or SourceTree.</p>
+            </div>
+        </section>
+        
+        <nav class="navigation-card">
+            <h3>Continue Learning</h3>
+            <ul class="nav-links">
+                <li><a href="basics.html" class="btn">← Back to Basics</a></li>
+                <li><a href="advanced.html" class="btn">Next: Advanced Features →</a></li>
+                <li><a href="notebook.html" class="btn highlight">Try the Hands-on Notebook</a></li>
+            </ul>
+        </nav>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>GitHub Tutorial Series - Created for educational purposes</p>
+        </div>
+    </footer>
+</body>
+</html> 
